@@ -5,7 +5,7 @@ import typescriptEslint from "typescript-eslint";
 
 const files = {
   files: ["**/*.{js,mjs,cjs,ts,mts}"],
-  ignores: ["node_modules/**/*.*", "node_modules/**/*.*"],
+  ignores: ["node_modules/**/*.*", "dist/**/*.*"],
 };
 
 const prettierConfig = [
@@ -77,8 +77,8 @@ const simpleImportSortConfig = [
 ];
 
 const typescriptConfig = [
-  ...typescriptEslint.configs.strict,
-  ...typescriptEslint.configs.stylistic,
+  ...typescriptEslint.configs.strict.map((config) => ({ ...config, ...files })),
+  ...typescriptEslint.configs.stylistic.map((config) => ({ ...config, ...files })),
   {
     ...files,
     rules: {
