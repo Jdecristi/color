@@ -1,10 +1,10 @@
 import { ColorError } from "@/errors/ColorError";
 import { hexToRgb, parseHex } from "@/formats/Hex";
 import { hslToRgb, parseHsl, validateHsl } from "@/formats/HueSaturationLightness";
-import { parseRgb, rgbToHex, rgbToHsl, validateRgb } from "@/formats/RedBlueGreen";
+import { parseRgb, rgbToHex, rgbToHsl, validateRgb } from "@/formats/RedGreenBlue";
 
 import type { HueSaturationLightnessAlpha } from "@/formats/HueSaturationLightness";
-import type { RedGreenBlueAlpha } from "@/formats/RedBlueGreen";
+import type { RedGreenBlueAlpha } from "@/formats/RedGreenBlue";
 
 type ColorAttributes = RedGreenBlueAlpha &
   HueSaturationLightnessAlpha & {

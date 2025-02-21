@@ -1,10 +1,10 @@
 import { describe, expect, test } from "bun:test";
 
 import { ColorError } from "@/errors/ColorError";
-import { parseRgb, rgbToHex, rgbToHsl } from "@/formats/RedBlueGreen";
+import { parseRgb, rgbToHex, rgbToHsl } from "@/formats/RedGreenBlue";
 
 import type { HueSaturationLightnessAlpha } from "@/formats/HueSaturationLightness";
-import type { RedGreenBlueAlpha } from "@/formats/RedBlueGreen";
+import type { RedGreenBlueAlpha } from "@/formats/RedGreenBlue";
 
 describe("parseRgb", () => {
   describe("should throw if invalid RGB code", () => {
