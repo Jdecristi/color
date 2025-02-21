@@ -201,8 +201,6 @@ class Color {
     const attributes = Color.getAttributesFromHsl(hsl);
     const color = Color.white;
 
-    console.log(attributes);
-
     color.setAttributes(attributes);
 
     return color;
