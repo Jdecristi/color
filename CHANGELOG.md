@@ -1,5 +1,11 @@
 # @jdecristi/color
 
+## 0.0.7
+
+### Patch Changes
+
+- fixed spelling errors & rounding issues on setters
+
 ## 0.0.6
 
 ### Patch Changes
