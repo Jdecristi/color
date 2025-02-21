@@ -29,6 +29,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "build": "bun run lint && bun test && tsup"
+    "build": "bun run lint && bun test && tsup",
+    "publish": "bun run build && bunx changeset publish"
   }
 }
