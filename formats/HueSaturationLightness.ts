@@ -33,6 +33,11 @@ type HueSaturationLightnessAlpha = {
 const HSL_REGEX = /^hsla?\(\s*(\d{1,3})\s*,\s*(\d{1,3})%\s*,\s*(\d{1,3})%(?:,\s*([0-1](?:\.\d+)?))?\s*\)$/;
 
 const validateHsl = (hue: number, saturation: number, lightness: number, alpha?: number) => {
+  // round hue, saturation, & lightness
+  hue = round(hue);
+  saturation = round(saturation, 2);
+  lightness = round(lightness, 2);
+
   const colorString = alpha
     ? `hsla(${hue}, ${saturation * 100}%, ${lightness * 100}%, ${alpha})`
     : `hsl(${hue}, ${saturation * 100}%, ${lightness * 100}%)`;
@@ -42,12 +47,7 @@ const validateHsl = (hue: number, saturation: number, lightness: number, alpha?:
   if (isNaN(lightness) || lightness < 0 || lightness > 1) throw ColorError.InvalidHSLCode(colorString);
   if (alpha && (isNaN(alpha) || alpha < 0 || alpha > 1)) throw ColorError.InvalidHSLCode(colorString);
 
-  return {
-    hue: round(hue),
-    saturation: round(saturation, 2),
-    lightness: round(lightness, 2),
-    alpha: defaultAlpha(alpha),
-  };
+  return { hue, saturation, lightness, alpha: defaultAlpha(alpha) };
 };
 
 const parseHsl = (color: string) => {

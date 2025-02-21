@@ -564,11 +564,21 @@ describe("Color", () => {
 
       expect(color.toHex()).toBe(expected);
     });
+
     test("Color should be black", () => {
       const color = Color.white;
       const expected = new Color("#000").toHex();
 
       color.lightness = 0;
+
+      expect(color.toHex()).toBe(expected);
+    });
+
+    test("Color should be 10% darker", () => {
+      const color = Color.white;
+      const expected = Color.hsl(0, 0, 0.9).toHex();
+
+      color.lightness -= 0.1;
 
       expect(color.toHex()).toBe(expected);
     });

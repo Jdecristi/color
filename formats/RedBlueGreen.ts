@@ -34,6 +34,11 @@ const RGB_HEX = /^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})(?:,\s*([0-
 
 /** @throws ColorError */
 const validateRgb = (red: number, green: number, blue: number, alpha?: number) => {
+  // round red, green, & blue
+  red = round(red);
+  green = round(green);
+  blue = round(blue);
+
   const colorString = alpha ? `rgba(${red}, ${green}, ${blue}, ${alpha})` : `rgb(${red}, ${green}, ${blue})`;
   const colors = [red, green, blue];
 
@@ -47,12 +52,7 @@ const validateRgb = (red: number, green: number, blue: number, alpha?: number) =
     throw ColorError.InvalidRGBCode(colorString);
   }
 
-  return {
-    red: round(red),
-    green: round(green),
-    blue: round(blue),
-    alpha: defaultAlpha(alpha),
-  };
+  return { red, green, blue, alpha: defaultAlpha(alpha) };
 };
 
 /** @throws ColorError */
