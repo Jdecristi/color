@@ -30,6 +30,7 @@
   "scripts": {
     "lint": "eslint .",
     "build": "bun run lint && bun test && tsup",
+    "changeset": "bunx changeset && bunx changeset version",
     "publish": "bun run build && bunx changeset publish"
   }
 }
