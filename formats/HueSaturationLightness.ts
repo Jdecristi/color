@@ -1,5 +1,6 @@
 import { ColorError } from "@/errors/ColorError";
 import { defaultAlpha } from "@/helpers/DefaultAlpha";
+import { round } from "@/helpers/Round";
 
 /**
  * @property
@@ -42,9 +43,9 @@ const validateHsl = (hue: number, saturation: number, lightness: number, alpha?:
   if (alpha && (isNaN(alpha) || alpha < 0 || alpha > 1)) throw ColorError.InvalidHSLCode(colorString);
 
   return {
-    hue: Math.round(hue),
-    saturation,
-    lightness,
+    hue: round(hue),
+    saturation: round(saturation, 2),
+    lightness: round(lightness, 2),
     alpha: defaultAlpha(alpha),
   };
 };
@@ -85,9 +86,9 @@ const hslToRgb = (hue: number, saturation: number, lightness: number, alpha?: nu
 
   const [redPrime, greenPrime, bluePrime] = huePrimeToRGB(huePrime, chroma, position);
 
-  const red = Math.round((redPrime + lightnessPrime) * 255);
-  const green = Math.round((greenPrime + lightnessPrime) * 255);
-  const blue = Math.round((bluePrime + lightnessPrime) * 255);
+  const red = round((redPrime + lightnessPrime) * 255);
+  const green = round((greenPrime + lightnessPrime) * 255);
+  const blue = round((bluePrime + lightnessPrime) * 255);
 
   return { red, green, blue, alpha };
 };

@@ -48,9 +48,9 @@ const validateRgb = (red: number, green: number, blue: number, alpha?: number) =
   }
 
   return {
-    red: Math.round(red),
-    green: Math.round(green),
-    blue: Math.round(blue),
+    red: round(red),
+    green: round(green),
+    blue: round(blue),
     alpha: defaultAlpha(alpha),
   };
 };
@@ -76,7 +76,7 @@ const rgbToHex = (red: number, green: number, blue: number, alpha?: number) => {
   alpha = rgb.alpha;
 
   // Convert to hexadecimal
-  const colors = [red, green, blue, Math.round(alpha * 255)]
+  const colors = [red, green, blue, round(alpha * 255)]
     .map((color) => color.toString(16).padStart(2, "0"))
     .join("")
     .toUpperCase();
@@ -112,7 +112,7 @@ const rgbToHsl = (red: number, green: number, blue: number, alpha?: number) => {
     return (red - green) / (max - min) + 4;
   })();
 
-  hue = Math.round(hue * 60);
+  hue = round(hue * 60);
   hue = hue < 0 ? hue + 360 : hue;
 
   return { hue, saturation, lightness, alpha };
