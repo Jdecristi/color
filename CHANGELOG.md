@@ -1,5 +1,11 @@
 # @jdecristi/color
 
+## 0.0.5
+
+### Patch Changes
+
+- remove console.log in index.ts
+
 ## 0.0.4
 
 ### Patch Changes
