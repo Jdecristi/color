@@ -13,7 +13,7 @@ eslint.config.mjs
 index.ts
 prettier.config.mjs
 tsconfig.json
-tsup.config
+tsup.config.mjs
 
 # env
 .env
