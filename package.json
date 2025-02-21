@@ -3,7 +3,7 @@
   "description": "A minimal library for using an manipulating colors in Javascript and Typescript",
   "license": "MIT",
   "author": "jdecristi",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": {
     "bun": "^1.2.0"
   },

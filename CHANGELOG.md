@@ -1,5 +1,11 @@
 # @jdecristi/color
 
+## 0.0.6
+
+### Patch Changes
+
+- Add rounding to hsl validation
+
 ## 0.0.5
 
 ### Patch Changes
