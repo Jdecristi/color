@@ -5,7 +5,7 @@ import typescriptEslint from "typescript-eslint";
 
 const files = {
   files: ["**/*.{js,mjs,cjs,ts,mts}"],
-  ignores: ["node_modules/**/*.*"],
+  ignores: ["node_modules/**/*.*", "node_modules/**/*.*"],
 };
 
 const prettierConfig = [
