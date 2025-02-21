@@ -1,0 +1,22 @@
+# source code
+.changeset
+.gitignore
+.github
+errors
+formats
+helpers
+node_modules
+tests
+types
+bun.lockb
+eslint.config.mjs
+index.ts
+prettier.config.mjs
+tsconfig.json
+tsup.config
+
+# env
+.env
+
+# misc
+.DS_Store

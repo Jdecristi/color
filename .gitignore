@@ -1,0 +1,11 @@
+# packages
+/node_modules
+
+# out
+/dist
+
+# env
+.env
+
+# misc
+.DS_Store
